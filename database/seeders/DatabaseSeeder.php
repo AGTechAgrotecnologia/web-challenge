@@ -16,8 +16,13 @@ class DatabaseSeeder extends Seeder
         // User::factory(10)->withPersonalTeam()->create();
 
         User::factory()->withPersonalTeam()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
+            'name' => 'Tarsísio Xavier',
+            'email' => 'tarsisio.xavier@mail.com',
+            'password' => 'secret123',
+        ]);
+
+        $this->call([
+            ShoppingSeeder::class,
         ]);
     }
 }

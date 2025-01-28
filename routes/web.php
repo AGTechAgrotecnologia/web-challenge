@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ShoppingController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -14,4 +15,7 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+
+    Route::get('/shoppings', [ShoppingController::class, 'index'])->name('shoppings');
+    Route::get('/shoppings/create', [ShoppingController::class, 'create'])->name('shoppings.create');
 });
